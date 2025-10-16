@@ -38,10 +38,10 @@ src/
              └─ user-edit-modal.        # модалка с конкретной реализацией формы
 
 
-UserListComponent - получает данные, открывает модалку, локально обновляет список.
+UserListComponent - получает данные, открывает модалку, локально обновляет список
 
-CardComponent - рендерит переданный ngTemplate.
+CardComponent - рендерит переданный ngTemplate
 
-UserEditModal - конкретная реализация формы (name, age, email, role).
+UserEditModal - конкретная реализация формы (name, age, email, role)
 
-CVA - переиспользуемые контролы.
+InputFieldComponent, SelectFieldComponent - переиспользуемые кастомные контролы

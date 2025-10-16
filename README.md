@@ -16,8 +16,8 @@ node -v
 npm -v
 
 # 3) Установить зависимости
-##npm install
-##Если Angular CLI не установлен глобально: npm i -g @angular/cli@19
+*npm install
+*Если Angular CLI не установлен глобально: npm i -g @angular/cli@19
 
 # 3) Запуск дев-сервера
 ng serve

@@ -1,0 +1,30 @@
+<form [formGroup]="editForm">
+  <label class="field">
+    <span class="label">First Name</span>
+    <app-input-field formControlName="firstName" placeholder="First Name"></app-input-field>
+  </label>
+  <label class="field">
+    <span class="label">Age</span>
+    <app-input-field formControlName="age" [type]="EInputType.number" placeholder="Age"></app-input-field>
+  </label>
+  <label class="field">
+    <span class="label">Email</span>
+    <app-input-field formControlName="email" [type]="EInputType.email" placeholder="Email"></app-input-field>
+  </label>
+  <label class="field">
+    <span class="label">Role</span>
+  <app-select-field [options]="roleOptions" formControlName="role"></app-select-field>
+  </label>
+
+  <div class="actions" mat-dialog-actions>
+    <button type="button" mat-button (click)="close()">Отмена</button>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="save()"
+      [disabled]="editForm.invalid"
+    >
+      Сохранить
+    </button>
+  </div>
+</form>

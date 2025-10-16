@@ -1,59 +1,55 @@
-# UserCards
+UserCards
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.17.
+Приложение на Angular 19 .
+Показывает список пользователей, позволяет редактировать данные в модальном окне. Карточки рендерятся через переопределяемый шаблон, для полей формы используются кастомные-CVA контролы.
 
-## Development server
+Стек:
+-Angular 19, Standalone Components, Change Detection: OnPush
+-RxJS + Signals
+-Angular Material
 
-To start a local development server, run:
+Быстрый старт
+# 1) Node (если не установлен)
+winget install OpenJS.NodeJS.LTS -s winget
+# перезапустить терминал и проверить:
+node -v
+npm -v
 
-```bash
+# 2) Клонировать репозиторий и установить зависимости
+git clone <url> user-cards
+cd user-cards
+npm ci
+
+# 3) Запуск дев-сервера
 ng serve
-```
+# откроется http://localhost:4200/
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+Если Angular CLI не установлен глобально: npm i -g @angular/cli@19
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Скрипты
+npm start        # ng serve
+npm run build    # ng build
+npm test         # unit-тесты (если добавите)
 
-```bash
-ng generate component component-name
-```
+Архитектура
+src/
+ ├─ core/           # api, основные модели
+ ├─ shared/         # переиспользуемые компоненты
+ │   └─ search/
+ │       ├─ input-field/   # кастомный контрол
+ │       └─ select-field/  # кастомный контрол
+ └─ features/
+     └─ user-list/
+         ├─ user-list.component.        # smart, бизнес-логика
+         └─ modals/
+             └─ user-edit-modal.        # модалка с конкретной реализацией формы
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+UserListComponent — получает данные, открывает модалку, локально обновляет список.
 
-## Building
+Card-list — рендерит переданный ngTemplate.
 
-To build the project run:
+UserEditModal — конкретная форма (name, age, email, role).
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+CVA-контролы — переиспользуемы .

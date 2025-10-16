@@ -1,0 +1,53 @@
+.cards-grid {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.card {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  will-change: box-shadow, transform;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.card:focus-within {
+  outline: 2px solid #c7e1ff;
+  outline-offset: 2px;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.card button {
+  width: 100%;
+  justify-self: end;
+  appearance: none;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.card button:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}

@@ -1,0 +1,9 @@
+@if (data().length) {
+  @for(el of data(); track $index) {
+  <ng-container
+    [ngTemplateOutlet]="cardTempl"
+    [ngTemplateOutletContext]="{ $implicit: el }"
+  >
+  </ng-container>
+  }    
+}

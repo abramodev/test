@@ -1,0 +1,14 @@
+<div class="cards-grid">
+  <app-card [data]="users()" [cardTempl]="userCardTpl">
+  </app-card>
+</div>
+
+<ng-template #userCardTpl let-user>
+  <div class="card">
+    <h3>{{ user.firstName }}</h3>
+    <div>Age: {{ user.age }}</div>
+    <div>Role: {{ user.role }}</div>
+    <div>Email: {{ user.email }}</div>
+    <button type="button" (click)="openEdit(user)">Редактировать</button>
+  </div>
+</ng-template>

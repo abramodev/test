@@ -43,8 +43,8 @@ src/
 
 UserListComponent - получает данные, открывает модалку, локально обновляет список.
 
-Card-list - рендерит переданный ngTemplate.
+CardComponent - рендерит переданный ngTemplate.
 
-UserEditModal - конкретная форма (name, age, email, role).
+UserEditModal - конкретная реализация формы (name, age, email, role).
 
 CVA - переиспользуемые контролы.

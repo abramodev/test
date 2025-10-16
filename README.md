@@ -15,17 +15,14 @@ winget install OpenJS.NodeJS.LTS -s winget
 node -v
 npm -v
 
-# 2) Запуск дев-сервера
+# 3) Установить зависимости
+npm install
+Если Angular CLI не установлен глобально: npm i -g @angular/cli@19
+
+# 3) Запуск дев-сервера
 ng serve
 # http://localhost:4200/
 
-
-Если Angular CLI не установлен глобально: npm i -g @angular/cli@19
-
-Скрипты
-npm start        # ng serve
-npm run build    # ng build
-npm test         # unit-тесты
 
 Архитектура
 src/
